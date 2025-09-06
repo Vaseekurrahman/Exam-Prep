@@ -1,0 +1,115 @@
+/* Reset */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Container for sidebar + main */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(to bottom right, #007bff, #6610f2);
+  color: white;
+  padding: 20px 10px;
+  transition: width 0.3s ease;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dashboard-container.collapsed .sidebar {
+  width: 0;
+  padding: 0;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Sidebar Nav Links */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-links li {
+  padding: 12px 20px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  color: white;
+  text-align: left;
+  font-size: 16px;
+}
+
+.nav-links li:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Main content area */
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin 0.3s ease;
+}
+
+/* Topbar */
+.topbar {
+  background: linear-gradient(to right, #6f42c1, #e83e8c);
+  padding: 15px 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+/* Hamburger menu */
+.toggle-btn {
+  background: white;
+  color: #6f42c1;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #e9ecef;
+}
+
+/* Content below topbar */
+.content {
+  padding: 20px;
+  flex-grow: 1;
+  background-color: #f8f9fa;
+}
+/* Hide inner content when sidebar is collapsed */
+.dashboard-container.collapsed .sidebar .sidebar-header,
+.dashboard-container.collapsed .sidebar .nav-links li {
+  display: none;
+}
+
